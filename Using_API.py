@@ -49,8 +49,9 @@ source_metadata = {
         'currency' : "ULD",
         'amount' : 1.2,
 
-        'username' : 'justin',
-        'sourcename' : r'E:\ipfs\go-ipfs\ipfs.exe'
+        'username' : 'default_wallet',
+        'sourcename' : r'E:\ipfs\go-ipfs\ipfs.exe',
+        'password':'123'
 }
 
 
@@ -59,7 +60,7 @@ def publish(upload_file):
     source_metadata['sourcename'] = upload_file
     source_metadata['metadata']['author'] = source_metadata.get('username')
     source_metadata['content_type'] = util.getType(source_metadata.get('sourcename'))
-    source_metadata['source_hash'] = ulord_transmitter.upload(source_metadata.get('sourcename'))
+    source_metadata['source_hash'] = str(ulord_transmitter.upload(source_metadata.get('sourcename')))
     # save file info in DB
     new_file = dbhelper.File(name=util.getName(source_metadata.get('sourcename')), hash=source_metadata['source_hash'])
     source_metadata['sourcename'] = util.getPureName(source_metadata.get('sourcename'))
@@ -133,7 +134,10 @@ if __name__ == '__main__':
     elif arg == 'login':
         login(sys.argv[2], sys.argv[3])
     elif arg == 'publish':
-        publish(sys.argv[2])
+        if len(sys.argv) == 3:
+            publish(sys.argv[2])
+        else:
+            publish(r'E:\ipfs\go-ipfs\ipfs.exe')
     elif arg == 'download':
         download(sys.argv[2])
 

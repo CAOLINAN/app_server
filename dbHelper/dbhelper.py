@@ -19,7 +19,7 @@ def check_version():
 
 check_version()
 dbpath = r'E:\ulord\app_server\dbHelper\app.db'
-engine = sqlalchemy.create_engine('sqlite:///{}'.format(dbpath), echo=True) # create an sql engine
+engine = sqlalchemy.create_engine('sqlite:///{}'.format(dbpath), echo=True)  # create an sql engine
 
 
 Base = declarative_base()
@@ -32,6 +32,7 @@ class User(Base):
     email = Column(String(40))
     phone = Column(String(40))
     password = Column(String(40))
+    ulord_password = Column(String(40))
 
 
 class File(Base):

@@ -7,16 +7,17 @@ import sqlalchemy
 
 if check_version():
     metadata = sqlalchemy.MetaData(engine)
-    # users_table = sqlalchemy.Table('users',
-    #                                metadata,
-    #                                sqlalchemy.Column('id', sqlalchemy.Integer, primary_key=True),
-    #                                sqlalchemy.Column('name', sqlalchemy.String(40)),
-    #                                sqlalchemy.Column('email', sqlalchemy.String(40)),
-    #                                sqlalchemy.Column('phone', sqlalchemy.String(40)),
-    #                                sqlalchemy.Column('password', sqlalchemy.String(120))
-    #                                )
-    # users_table = sqlalchemy.Table('users', metadata, autoload=True)
-    # users_table.create()
+    users_table = sqlalchemy.Table('users',
+                                   metadata,
+                                   sqlalchemy.Column('id', sqlalchemy.Integer, primary_key=True),
+                                   sqlalchemy.Column('name', sqlalchemy.String(40)),
+                                   sqlalchemy.Column('email', sqlalchemy.String(40)),
+                                   sqlalchemy.Column('phone', sqlalchemy.String(40)),
+                                   sqlalchemy.Column('ulord_password', sqlalchemy.String(40)),
+                                   sqlalchemy.Column('password', sqlalchemy.String(40))
+                                   )
+    users_table = sqlalchemy.Table('users', metadata, autoload=True)
+    users_table.create()
 
     files_table = sqlalchemy.Table('files',
                                       metadata,

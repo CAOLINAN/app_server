@@ -13,6 +13,7 @@ class Ulord_comment(object):
         self.filename = filename
         self.content_type = util.getType(self.filename)
         self.metadata = MetaData()
+        self.password = self.get_password()
 
     def upload(self):
         self.source_hash = ulord_transmitter.upload(self.filename)
@@ -23,17 +24,21 @@ class Ulord_comment(object):
     def set_description(self, description):
         self.metadata.description = description
 
+    def get_password(self):
+        password = '123'# TODO query password from the DB
+        return password
+
 class MetaData(object):
     def __init__(self):
-        self.description = '' # 描述
-        self.language = 'en' # 平台层?
+        self.description = ''  # 描述
+        self.language = 'en'  # 平台层?
         self.title = "test"
-        self.author = "test" #
-        self.nsfw = False # 平台层
+        self.author = "test"  #
+        self.nsfw = False  # 平台层
         self.licenseUrl = '' # ?
-        self.preview = '' # 预览 二进制或者预览内容存入IPFS的hash值
-        self.thumbnail = '' # ?
-        self.tag = [] # string list 标签
+        self.preview = ''  # 预览 二进制或者预览内容存入IPFS的hash值
+        self.thumbnail = ''  # ?
+        self.tag = []  # string list 标签
 
     def set_default(self, nsfw, licenseUrl, thumbnail):
         self.nsfw = nsfw
