@@ -30,8 +30,10 @@ ipfs daemon
 This is a daemon program.Don't exit!
 
 # run
+```bash
 python Using_API.py publish <your file path>
-python Using_API.py download <youre hash>
 
+python Using_API.py download <youre hash>
+```
 
 

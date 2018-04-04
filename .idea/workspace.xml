@@ -43,16 +43,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="requirements.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/requirements.txt">
           <provider selected="true" editor-type-id="text-editor">
@@ -66,11 +56,21 @@
       <file leaf-file-name="dbManager.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dbHelper/dbManager.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="864">
+            <state relative-caret-position="792">
               <caret line="33" column="38" lean-forward="false" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
               <folding>
                 <element signature="e#80#122#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="681">
+              <caret line="36" column="3" lean-forward="false" selection-start-line="36" selection-start-column="3" selection-end-line="36" selection-end-column="3" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -555,6 +555,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9126">
           <caret line="2442" column="10" lean-forward="false" selection-start-line="2442" selection-start-column="6" selection-end-line="2442" selection-end-column="10" />
+          <folding>
+            <element signature="e#10484#13224#0" expanded="false" />
+            <element signature="e#13257#14026#0" expanded="false" />
+            <element signature="e#14087#15277#0" expanded="false" />
+            <element signature="e#15314#15523#0" expanded="false" />
+            <element signature="e#15558#15762#0" expanded="false" />
+            <element signature="e#15823#22821#0" expanded="false" />
+            <element signature="e#22851#25742#0" expanded="false" />
+            <element signature="e#25804#27747#0" expanded="false" />
+            <element signature="e#27805#28758#0" expanded="false" />
+            <element signature="e#28816#29530#0" expanded="false" />
+            <element signature="e#29565#31580#0" expanded="false" />
+            <element signature="e#31616#32253#0" expanded="false" />
+            <element signature="e#32288#32527#0" expanded="false" />
+            <element signature="e#32572#38791#0" expanded="false" />
+            <element signature="e#38840#53838#0" expanded="false" />
+            <element signature="e#53878#56476#0" expanded="false" />
+            <element signature="e#56533#60121#0" expanded="false" />
+            <element signature="e#60191#61160#0" expanded="false" />
+            <element signature="e#61228#64042#0" expanded="false" />
+            <element signature="e#64084#75856#0" expanded="false" />
+            <element signature="e#75932#86183#0" expanded="false" />
+            <element signature="e#86210#86263#0" expanded="false" />
+            <element signature="e#86291#86346#0" expanded="false" />
+            <element signature="e#86378#86437#0" expanded="false" />
+            <element signature="e#86469#86528#0" expanded="false" />
+            <element signature="e#86560#86626#0" expanded="false" />
+            <element signature="e#86865#87735#0" expanded="false" />
+            <element signature="e#87769#87830#0" expanded="false" />
+            <element signature="e#87856#87909#0" expanded="false" />
+            <element signature="e#87935#87988#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -604,6 +636,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="729">
           <caret line="2482" column="21" lean-forward="false" selection-start-line="2482" selection-start-column="21" selection-end-line="2482" selection-end-column="21" />
+          <folding>
+            <element signature="e#10484#13224#0" expanded="false" />
+            <element signature="e#13257#14026#0" expanded="false" />
+            <element signature="e#14087#15277#0" expanded="false" />
+            <element signature="e#15314#15523#0" expanded="false" />
+            <element signature="e#15558#15762#0" expanded="false" />
+            <element signature="e#15823#22821#0" expanded="false" />
+            <element signature="e#22851#25742#0" expanded="false" />
+            <element signature="e#25804#27747#0" expanded="false" />
+            <element signature="e#27805#28758#0" expanded="false" />
+            <element signature="e#28816#29530#0" expanded="false" />
+            <element signature="e#29565#31580#0" expanded="false" />
+            <element signature="e#31616#32253#0" expanded="false" />
+            <element signature="e#32288#32527#0" expanded="false" />
+            <element signature="e#32572#38791#0" expanded="false" />
+            <element signature="e#38840#53838#0" expanded="false" />
+            <element signature="e#53878#56476#0" expanded="false" />
+            <element signature="e#56533#60121#0" expanded="false" />
+            <element signature="e#60191#61160#0" expanded="false" />
+            <element signature="e#61228#64042#0" expanded="false" />
+            <element signature="e#64084#75856#0" expanded="false" />
+            <element signature="e#75932#86183#0" expanded="false" />
+            <element signature="e#86210#86263#0" expanded="false" />
+            <element signature="e#86291#86346#0" expanded="false" />
+            <element signature="e#86378#86437#0" expanded="false" />
+            <element signature="e#86469#86528#0" expanded="false" />
+            <element signature="e#86560#86626#0" expanded="false" />
+            <element signature="e#86865#87735#0" expanded="false" />
+            <element signature="e#87769#87830#0" expanded="false" />
+            <element signature="e#87856#87909#0" expanded="false" />
+            <element signature="e#87935#87988#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -675,16 +739,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dbHelper/User.py" />
     <entry file="file://$PROJECT_DIR$/dbHelper/File.py" />
-    <entry file="file://$PROJECT_DIR$/dbHelper/dbManager.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="33" column="38" lean-forward="false" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
-          <folding>
-            <element signature="e#80#122#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Using_API.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -727,10 +781,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dbHelper/dbManager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="792">
+          <caret line="33" column="38" lean-forward="false" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
+          <folding>
+            <element signature="e#80#122#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+        <state relative-caret-position="681">
+          <caret line="36" column="3" lean-forward="false" selection-start-line="36" selection-start-column="3" selection-end-line="36" selection-end-column="3" />
           <folding />
         </state>
       </provider>
