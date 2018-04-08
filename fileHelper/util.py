@@ -60,7 +60,54 @@ def changeName(originalname, newname):
         return False
 
 
+def saveFile(filepath, source):
+    # save source into a filepath
+    try:
+        with open(filepath, 'wb') as target_file:
+            for line in source:
+                target_file.write(line)
+            return True
+    except:
+        return False
+
+
+def mergeFile(filepath, chunks):
+    # merge chunks into a file
+    try:
+        with open(filepath, 'wb') as target_file:
+            for chunk in chunks:
+                with open(chunk, 'rb') as source_file:
+                    for line in source_file:
+                        target_file.write(line)
+                try:
+                    os.remove(chunk)  # 删除该分片，节约空间
+                except Exception, e:
+                    print("{0}:{1} remove failed:{2}".format(chunk, os.path.isfile(chunk), e))
+        return True
+    except Exception,e:
+        print("Error mergeFile:{}".format(e))
+        return False
+
+
+def readFile(filepath):
+    # read file comment
+    result = None
+    try:
+        with open(filepath, 'rb') as target_file:
+            result = target_file
+    except Exception, e:
+        print("Error: read file{0}:{1}".format(filepath, e))
+    return result
+
+
+
+def getRootPath():
+    # get project root path
+    return os.path.split(os.getcwd())[0]
+
+
 if __name__ == '__main__':
-    print (getPureName('E:\ipfs\go-ipfs\ipfs.exe'))
-    print(getSize('E:\ipfs\go-ipfs\ipfs.exe'))
-    changeName(r'E:\ulord\app_server\sasas', 'testchange')
+    # print (getPureName('E:\ipfs\go-ipfs\ipfs.exe'))
+    # print(getSize('E:\ipfs\go-ipfs\ipfs.exe'))
+    # changeName(r'E:\ulord\app_server\sasas', 'testchange')
+    print (getRootPath())

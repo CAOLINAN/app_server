@@ -37,9 +37,17 @@ class User(Base):
 
 class File(Base):
     __tablename__ = 'files'
-    # id = Column(Integer, primary_key=True)
-    hash = Column(String(46), primary_key=True)
+    id = Column(Integer, primary_key=True)
+    filehash = Column(String(46))
     name = Column(String(40))
+    # local_path = Column(String(46))
+
+
+class download(Base):
+    __tablename__ = 'downloads'
+    id = Column(Integer, primary_key=True)
+    filehash = Column(String(46))
+    chunks = Column(String())
 
 
 session = sessionmaker(bind=engine)()

@@ -28,6 +28,7 @@ class Ulord_comment(object):
         password = '123'# TODO query password from the DB
         return password
 
+
 class MetaData(object):
     def __init__(self):
         self.description = ''  # 描述
