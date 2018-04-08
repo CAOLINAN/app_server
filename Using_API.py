@@ -36,8 +36,8 @@ source_metadata = {
         "license": "LBRY Inc",
         "description": "What is LBRY? An introduction with Alex Tabarrok",
         "language": "en",
-        "title": "What is LBRY?",
-        "author": "Samuel Bryan",
+        "title": "Test",
+        "author": "CAOLINAN",
         "nsfw": False,
         "licenseUrl": "",
         "preview": "",
@@ -60,9 +60,11 @@ def publish(upload_file):
     source_metadata['sourcename'] = upload_file
     source_metadata['metadata']['author'] = source_metadata.get('username')
     source_metadata['content_type'] = util.getType(source_metadata.get('sourcename'))
-    source_metadata['source_hash'] = str(ulord_transmitter.upload(source_metadata.get('sourcename')))
+    # source_metadata['source_hash'] = ulord_transmitter.upload(source_metadata.get('sourcename')) # TODO change the schema
+    upoload_hash = ulord_transmitter.upload(source_metadata.get('sourcename'))
     # save file info in DB
-    new_file = dbhelper.File(name=util.getName(source_metadata.get('sourcename')), hash=source_metadata['source_hash'])
+    # new_file = dbhelper.File(name=util.getName(source_metadata.get('sourcename')), hash=source_metadata['source_hash'])
+    new_file = dbhelper.File(name=util.getName(source_metadata.get('sourcename')), hash=upoload_hash)
     source_metadata['sourcename'] = util.getPureName(source_metadata.get('sourcename'))
 
     try:
@@ -76,9 +78,10 @@ def publish(upload_file):
     if source_metadata['source_hash']:
         import pprint
         pprint.pprint(source_metadata)
-        print("hash:{}".format(source_metadata.get('source_hash')))
+        # print("hash:{}".format(source_metadata.get('source_hash')))
+        print("hash:{}".format(upoload_hash))
         res = requests.post(url, json=source_metadata, headers={'appkey': "03e410a136ec11e8adaff48e3889c8ab"})
-        # print(res)
+        print("res:{}".format(res))
         # print(res.json())
         print (res.json().get('reason'))
 

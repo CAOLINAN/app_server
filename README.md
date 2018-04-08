@@ -12,6 +12,8 @@ thirdly using pip to install packages
 pip install -r requirements.txt
 ```
 ## install go-ipfs
+You can use Tools/ipfs/install.bat to install ipfs.It will copy the ipfs.exe to your system environment.
+> warnning:It will copy the file to C:\Windows\System32.So if your system environment is not there you should modify the bat file handly and excute it.
 
 go-ipfs is a tool of ipfs.You can connect the ipfs using it.Change the config and you can connect the ulord's IPFS.
 
