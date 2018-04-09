@@ -62,12 +62,18 @@ def changeName(originalname, newname):
 
 def saveFile(filepath, source):
     # save source into a filepath
+    dirpath = os.path.split(filepath)[0]
+    if os.path.isdir(dirpath):
+        pass
+    else:
+        os.makedirs(dirpath)
     try:
         with open(filepath, 'wb') as target_file:
             for line in source:
                 target_file.write(line)
             return True
-    except:
+    except Exception, e:
+        print("saveFile error:{}".format(e))
         return False
 
 

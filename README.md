@@ -47,7 +47,7 @@ python Using_API.py publish <your file path>
 python Using_API.py download <youre hash>
 ```
 ## TODO
-- [ ] resumable downloads.
+- [x] resumable downloads.
 - [ ] multithreading downloads
 - [ ] docker environment
 - [ ] unix environment

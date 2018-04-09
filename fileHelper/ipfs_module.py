@@ -7,7 +7,7 @@ import time, ipfsapi
 import logging
 # import requests
 import os
-
+import json
 import util
 
 
@@ -73,38 +73,56 @@ class UlordTransmitter():
             logging.error("download fail:{}".format(e))
             return False
 
-    def downloadchunk(self, filehash):
-        self.list(filehash)
-        if self.links:
-            i = 0
-            for link in ulord_transmitter.links:
-                if 'Hash' in link.keys():
-                    self.chunks.update({
-                        link.get('Hash'): {
-                            'chunk': i,
-                            # 'success': self.downloadhash(link.get('Hash'), os.path.join(self.downloadpath, filehash))
-                            'success': False
-                        }
-                    })
-                i += 1
-            # print(ulord_transmitter.chunks)
-            # TODO save ulord_transmitter.chunks in the file or DB
-            # util.saveFile(os.path.join(os.path.join(util.getRootPath(), 'download'), '{}_temp'.format(filehash)), self.chunks)
-        else:
-            print("no chunks")
+    def resumableMerge(self, filehash, filename=None):
+        # not thread safely.single thread
+        filehash_path = os.path.join(self.downloadpath, filehash)
+        tempjson = os.path.join(filehash_path, 'temp.json')
+        if not os.path.isfile(tempjson):
+            # save chunks result into the temp.json
+            self.list(filehash)
+            if self.links:
+                i = 0
+                for link in self.links:
+                    if 'Hash' in link.keys():
+                        self.chunks.update({
+                            i: {
+                                'filehash': link.get('Hash'),
+                                'success': False
+                            }
+                        })
+                    i += 1
+                util.saveFile(tempjson, json.dumps(self.chunks))
+            else:
+                print("no chunks.Error get the {} chunks result".format(filehash))
+        # download chunk
+        with open(tempjson) as target_file:
+            self.chunks = json.load(target_file)
+        if self.chunks:
+            for chunk, chunk_result in self.chunks.iteritems():
+                if not chunk_result.get('success'):
+                    chunk_result['success'] = self.downloadhash(chunk_result.get('filehash'), filehash_path) or chunk_result.get('success')
+                    util.saveFile(tempjson, json.dumps(self.chunks))
+            # merge chunks
+            if filename:
+                localfile = os.path.join(filehash_path, filename)
+            else:
+                localfile = os.path.join(filehash_path, filehash)
+            with open(localfile, 'wb') as target_file:
+                for i in range(len(self.chunks)):
+                    chunk = os.path.join(filehash_path, self.chunks.get(str(i)).get('filehash'))
+                    with open(chunk, 'rb') as source_file:
+                        for line in source_file:
+                            target_file.write(line)
+                    try:
+                        os.remove(chunk)  # 删除该分片，节约空间
+                    except Exception, e:
+                        print("{0}:{1} remove failed:{2}".format(chunk, os.path.isfile(chunk), e))
+                try:
+                    os.remove(tempjson)
+                except Exception, e:
+                    print("{0}:{1} remove failed:{2}".format(tempjson, os.path.isfile(tempjson), e))
 
-    def merge(self, filehash):
-        self.list(hash)
-        if self.links:
-            chunk_list = []
-            for link in self.links:
-                if 'Hash' in link.keys():
-                    if os.path.isfile(os.path.join(os.path.join(self.downloadpath, filehash), link.get('Hash'))):
-                        chunk_list.append(link.get('Hash'))
-                    else:
-                        self.downloadhash(link.get('Hash'),os.path.join(self.downloadpath, filehash))
-                        chunk_list.append(link.get('Hash'))
-            util.mergeFile('go-ipfs_v0.4.14_linux-amd64.tar.gz', chunk_list)
+
 # ulord_transmitter = UlordTransmitter()
 
 
