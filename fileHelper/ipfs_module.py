@@ -71,7 +71,7 @@ class UlordTransmitter():
             return True
         except Exception, e:
             logging.error("download fail:{}".format(e))
-            return None
+            return False
 
     def downloadchunk(self, filehash):
         self.list(filehash)
@@ -82,7 +82,8 @@ class UlordTransmitter():
                     self.chunks.update({
                         link.get('Hash'): {
                             'chunk': i,
-                            'success': self.downloadhash(link.get('Hash'), os.path.join(self.downloadpath, filehash))
+                            # 'success': self.downloadhash(link.get('Hash'), os.path.join(self.downloadpath, filehash))
+                            'success': False
                         }
                     })
                 i += 1

@@ -33,6 +33,7 @@ if check_version():
     #                                   sqlalchemy.Column('id',sqlalchemy.Integer, primary_key=True),
     #                                   sqlalchemy.Column('filehash', sqlalchemy.String(46)),
     #                                   sqlalchemy.Column('chunks',sqlalchemy.String()),
+    #                                   sqlalchemy.Column()
     #                                   # sqlalchemy.Column('user_id'),sqlalchemy.Integer)# TODO foreign key userid
     #                                    )
     # downloads_table.create()

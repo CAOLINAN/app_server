@@ -1,9 +1,16 @@
 # app_server
 using IPFS and ulord to create a single a blog
 
-# install
-## install python and pip
-firstly you need install python2.7 from the [website](https://www.python.org/)
+## Features
+> * resource pricing
+> * every source infomation publishes on the ulord
+> * every transaction can be queryed on the ulord
+> * upload to the ulord's IPFS,don't worry about storage
+> * mutil chunks download
+
+## install
+### install python and pip
+firstly you need to install python2.7 from the [website](https://www.python.org/)
 
 secondly install pip to manager your python packages
 
@@ -11,9 +18,9 @@ thirdly using pip to install packages
 ```bash
 pip install -r requirements.txt
 ```
-## install go-ipfs
+### install go-ipfs
 You can use Tools/ipfs/install.bat to install ipfs.It will copy the ipfs.exe to your system environment.
-> warnning:It will copy the file to C:\Windows\System32.So if your system environment is not there you should modify the bat file handly and excute it.
+> warnning:It will copy the file to "C:\Windows\System32".So if your system environment is not there you should modify the bat file handly and execute it.
 
 go-ipfs is a tool of ipfs.You can connect the ipfs using it.Change the config and you can connect the ulord's IPFS.
 
@@ -31,7 +38,7 @@ ipfs daemon
 ```
 This is a daemon program.Don't exit!
 
-# run
+## run
 ```bash
 python dbHelper\dbManager.py
 
@@ -39,5 +46,18 @@ python Using_API.py publish <your file path>
 
 python Using_API.py download <youre hash>
 ```
+## TODO
+- [ ] resumable downloads.
+- [ ] multithreading downloads
+- [ ] docker environment
+- [ ] unix environment
+- [x] add TODO list
+- [x] mutil chunks download
+- [x] add unit test
 
+## Help keep this project alive
+> * zhifubao
+![pay](https://github.com/CAOLINAN/app_server/image/zhifubao.jpg "Ö§¸¶±¦")
+> * weixin
+![pay](https://github.com/CAOLINAN/app_server/image/weixin.png "Î¢ÐÅ")
 
