@@ -56,11 +56,11 @@ python Using_API.py download <youre hash>
 - [x] add unit test
 
 ## Help keep this project alive
-> * zhifubao
+> * Allipay
 
-![pay](https://github.com/CAOLINAN/app_server/blob/master/image/zhifubao.jpg "zhifubao")
+![pay](https://github.com/CAOLINAN/app_server/blob/master/image/alipay.png "Thank you")
 
-> * weixin
+> * WeChat Pay
 
-![pay](https://github.com/CAOLINAN/app_server/blob/master/image/weixin.png "weixin")
+![pay](https://github.com/CAOLINAN/app_server/blob/master/image/wechatpay.png "Thank you")
 
