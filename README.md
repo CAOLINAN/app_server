@@ -57,7 +57,10 @@ python Using_API.py download <youre hash>
 
 ## Help keep this project alive
 > * zhifubao
-![pay](https://github.com/CAOLINAN/app_server/image/zhifubao.jpg "Ö§¸¶±¦")
+
+![pay](https://github.com/CAOLINAN/app_server/blob/master/image/zhifubao.jpg "zhifubao")
+
 > * weixin
-![pay](https://github.com/CAOLINAN/app_server/image/weixin.png "Î¢ÐÅ")
+
+![pay](https://github.com/CAOLINAN/app_server/blob/master/image/weixin.png "weixin")
 
