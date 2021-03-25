@@ -7,7 +7,7 @@ ipfsapi==0.4.2.post1
 itsdangerous==0.24
 Jinja2==2.10
 MarkupSafe==1.0
-PyYAML==3.12
+PyYAML==5.4
 requests==2.18.4
 six==1.11.0
 SQLAlchemy==1.2.6
